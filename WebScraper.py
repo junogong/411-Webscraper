@@ -5,8 +5,10 @@ import pandas as pd
 donor_namelist = []
 donor_addresslist = []
 donor_numlist = []
+FILE_PATH = "" # File path to the list of names here
+SAVE_PATH = "" # File path to save to
 
-name_list = pd.read_csv("C:\\Users\\junog\\Documents\\GGR322\\donorlist.csv")
+name_list = pd.read_csv(FILE_PATH)
 
 url_name = name_list['FN'] + "+" + name_list['LN']
 
@@ -80,7 +82,7 @@ for url in url_name:
         except Exception as e:
             donor_resnum = 0
 
-donor_list.to_csv("C:\\Users\\junog\\Documents\\GGR322\\donorinfo.csv")
+donor_list.to_csv(SAVE_PATH)
 
 
 
